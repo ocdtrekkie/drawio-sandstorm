@@ -29,7 +29,7 @@ const pkgdef :Spk.PackageDefinition = (
     
     appTitle = (defaultText = "diagrams.net"),
     
-    appMarketingVersion = (defaultText = (embed "/opt/drawio/VERSION")),
+    appMarketingVersion = (defaultText = (embed "VERSION")),
 
     actions = [
       # Define your "new document" handlers here.
@@ -71,7 +71,7 @@ const pkgdef :Spk.PackageDefinition = (
       shortDescription = (defaultText = embed "shortDesc.txt"),
 
       screenshots = [
-        (width = 448, height = 243, png = embed "client/images/drawio448.png")
+        (width = 448, height = 243, png = embed "drawio448.png")
       ],
 
       changeLog = (defaultText = embed "ChangeLog"),
