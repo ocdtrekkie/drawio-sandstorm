@@ -55,13 +55,13 @@ const pkgdef :Spk.PackageDefinition = (
       ),
 
       website = "https://www.diagrams.net/",
-      codeUrl = "https://github.com/jgraph/drawio",
-      license = (openSource = gpl3),
+      codeUrl = "https://github.com/ocdtrekkie/drawio-sandstorm",
+      license = (openSource = apache2),
       categories = [office, productivity],
 
       author = (
         upstreamAuthor = "JGraph",
-        contactEmail = "support@draw.io",
+        contactEmail = "inbox@jacobweisz.com",
         pgpSignature = embed "pgp-signature",
       ),
       pgpKeyring = embed "pgp-keyring",

@@ -1,9 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+echo "Getting upstream"
 sudo git -C "/opt/drawio" pull
 cp -v /opt/drawio/VERSION /opt/app/.sandstorm
 
+echo "Gathering client files"
 cd /opt/app/.sandstorm/client
 cp -v /opt/drawio/src/main/webapp/favicon.ico .
 cp -v /opt/drawio/src/main/webapp/open.html .
@@ -30,8 +32,8 @@ cp -rf /opt/drawio/src/main/webapp/styles/* styles/
 mkdir -p templates
 cp -rf /opt/drawio/src/main/webapp/templates/* templates/
 
-# echo "Compressing assets"
-#find . -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.txt' -o -name '*.xml' | xargs gzip -k
+echo "Compressing assets"
+find . -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.txt' -o -name '*.xml' | xargs gzip -f -k
 
 echo "Creating file list"
 find . -type f -printf "%p\n" | cut -c 3- >  /opt/app/.sandstorm/sandstorm-files.list
